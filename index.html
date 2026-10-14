@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Hidupku</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="light">
+
+  <!-- TOMBOL GANTI TEMA -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Ganti mode gelap/terang">
+    🌙
+  </button>
+
+  <div class="container">
+
+    <!-- ===== BAGIAN SAPAAN ===== -->
+    <section class="card greeting-card" id="greetingSection">
+      <div class="clock" id="clock">00:00:00</div>
+      <div class="date" id="date">Memuat...</div>
+      <div class="greeting" id="greeting">Halo!</div>
+      <!-- Challenge: Nama kustom di sapaan -->
+      <div class="name-edit-area" id="nameEditArea">
+        <span id="greetingName"></span>
+        <button class="btn-icon" id="editNameBtn" title="Ubah namamu">✏️</button>
+      </div>
+      <div class="name-input-area hidden" id="nameInputArea">
+        <input type="text" id="nameInput" placeholder="Masukkan namamu..." maxlength="30" />
+        <button class="btn btn-primary" id="saveNameBtn">Simpan</button>
+      </div>
+    </section>
+
+    <div class="main-grid">
+
+      <!-- ===== BAGIAN TIMER FOKUS ===== -->
+      <section class="card timer-card">
+        <h2 class="section-title">Timer Fokus</h2>
+        <!-- Challenge: Ubah durasi Pomodoro -->
+        <div class="timer-settings">
+          <label for="timerMinutes">Atur menit:</label>
+          <input type="number" id="timerMinutes" min="1" max="120" value="25" />
+          <button class="btn btn-secondary" id="applyTimerBtn">Terapkan</button>
+        </div>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        <div class="timer-buttons">
+          <button class="btn btn-primary" id="startBtn">Mulai</button>
+          <button class="btn btn-secondary" id="stopBtn">Berhenti</button>
+          <button class="btn btn-danger" id="resetBtn">Reset</button>
+        </div>
+      </section>
+
+      <!-- ===== BAGIAN DAFTAR TUGAS ===== -->
+      <section class="card todo-card">
+        <h2 class="section-title">Tugas</h2>
+        <div class="todo-input-row">
+          <input type="text" id="taskInput" placeholder="Tambah tugas baru..." maxlength="100" />
+          <button class="btn btn-primary" id="addTaskBtn">Tambah</button>
+        </div>
+        <div class="todo-sort-row">
+          <label for="sortSelect">Urutkan:</label>
+          <select id="sortSelect">
+            <option value="default">Bawaan</option>
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+            <option value="done">Selesai terakhir</option>
+          </select>
+        </div>
+        <ul class="task-list" id="taskList"></ul>
+      </section>
+
+    </div><!-- end .main-grid -->
+
+    <!-- ===== BAGIAN TAUTAN CEPAT ===== -->
+    <section class="card links-card">
+      <h2 class="section-title">Tautan Cepat</h2>
+      <div class="link-input-row">
+        <input type="text" id="linkName" placeholder="Nama tautan" maxlength="30" />
+        <input type="url" id="linkUrl" placeholder="https://..." maxlength="200" />
+        <button class="btn btn-primary" id="addLinkBtn">Tambah Tautan</button>
+      </div>
+      <div class="links-list" id="linksList"></div>
+    </section>
+
+  </div><!-- end .container -->
+
+  <script src="js/script.js"></script>
+</body>
+</html>
